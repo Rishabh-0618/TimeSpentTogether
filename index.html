@@ -56,18 +56,18 @@
             color: white;
             display: none;
         }
-        .popup1 { top: -50px; left: -80px; }
-        .popup2 { top: 50px; right: -80px; }
-        .popup3 { bottom: -50px; left: -60px; }
-        .popup4 { bottom: 50px; right: -60px; }
-        .popup5 { top: -80px; right: 20px; }
+        .popup1 { top: -120px; left: -150px; }
+        .popup2 { top: 120px; right: -150px; }
+        .popup3 { bottom: -120px; left: -130px; }
+        .popup4 { bottom: 120px; right: -130px; }
+        .popup5 { top: -150px; right: 50px; }
         .balloon, .heart {
             position: absolute;
             width: 50px;
             height: 70px;
             border-radius: 50%;
             opacity: 0.7;
-            animation: float 5s linear infinite;
+            animation: float 8s ease-in-out infinite;
         }
         .heart {
             width: 40px;
@@ -122,21 +122,21 @@
         updateClock();
 
         function createBalloonsAndHearts() {
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 20; i++) {
                 let balloon = document.createElement("div");
                 balloon.className = "balloon";
                 balloon.style.left = Math.random() * 100 + "vw";
                 balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 75%)`;
-                balloon.style.animationDuration = (Math.random() * 3 + 3) + "s";
+                balloon.style.animationDuration = (Math.random() * 6 + 6) + "s";
                 document.body.appendChild(balloon);
-                setTimeout(() => { balloon.remove(); }, 5000);
+                setTimeout(() => { balloon.remove(); }, 8000);
 
                 let heart = document.createElement("div");
                 heart.className = "heart";
                 heart.style.left = Math.random() * 100 + "vw";
-                heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+                heart.style.animationDuration = (Math.random() * 6 + 6) + "s";
                 document.body.appendChild(heart);
-                setTimeout(() => { heart.remove(); }, 5000);
+                setTimeout(() => { heart.remove(); }, 8000);
             }
         }
     </script>
