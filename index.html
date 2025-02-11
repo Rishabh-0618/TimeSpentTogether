@@ -11,7 +11,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url('https://wallpapers.com/images/hd/cute-hello-kitty-pink-background-mox1cvd51mvexfmr.jpg');
+            background-image: url('images/kitty.jpg');
             background-size: cover;
             background-position: center;
             font-family: Arial, sans-serif;
@@ -30,11 +30,13 @@
         }
         .show-button {
             position: absolute;
-            top: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 20px;
-            font-size: 18px;
+            font-size: 24px; padding: 20px 40px;
             background-color: pink;
             border: none;
             border-radius: 5px;
@@ -52,6 +54,7 @@
     <script>
         function showClock() {
             document.getElementById("clockContainer").style.display = "block";
+            document.querySelector(".show-button").style.display = "none";
         }
         function updateClock() {
             const startTime = new Date("August 6, 2024 23:58:00").getTime();
