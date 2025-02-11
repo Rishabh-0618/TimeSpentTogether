@@ -56,18 +56,18 @@
             color: white;
             display: none;
         }
-        .popup1 { top: -120px; left: -150px; }
-        .popup2 { top: 120px; right: -150px; }
-        .popup3 { bottom: -120px; left: -130px; }
-        .popup4 { bottom: 120px; right: -130px; }
-        .popup5 { top: -150px; right: 50px; }
+        .popup1 { top: -200px; left: -250px; }
+        .popup2 { top: 200px; right: -250px; }
+        .popup3 { bottom: -200px; left: -230px; }
+        .popup4 { bottom: 200px; right: -230px; }
+        .popup5 { top: -250px; right: 150px; }
         .balloon, .heart {
             position: absolute;
             width: 50px;
             height: 70px;
             border-radius: 50%;
-            opacity: 0.7;
-            animation: float 8s ease-in-out infinite;
+            opacity: 1;
+            animation: float 10s ease-in-out infinite;
         }
         .heart {
             width: 40px;
@@ -98,11 +98,7 @@
             document.getElementById("clockContainer").style.display = "block";
             document.querySelector(".show-button").style.display = "none";
             setTimeout(() => {
-                document.getElementById("popup1").style.display = "block";
-                document.getElementById("popup2").style.display = "block";
-                document.getElementById("popup3").style.display = "block";
-                document.getElementById("popup4").style.display = "block";
-                document.getElementById("popup5").style.display = "block";
+                document.querySelectorAll(".popup").forEach(popup => popup.style.display = "block");
             }, 1000);
             createBalloonsAndHearts();
         }
@@ -122,21 +118,21 @@
         updateClock();
 
         function createBalloonsAndHearts() {
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 30; i++) {
                 let balloon = document.createElement("div");
                 balloon.className = "balloon";
                 balloon.style.left = Math.random() * 100 + "vw";
                 balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 75%)`;
-                balloon.style.animationDuration = (Math.random() * 6 + 6) + "s";
+                balloon.style.animationDuration = (Math.random() * 6 + 8) + "s";
                 document.body.appendChild(balloon);
-                setTimeout(() => { balloon.remove(); }, 8000);
+                setTimeout(() => { balloon.remove(); }, 10000);
 
                 let heart = document.createElement("div");
                 heart.className = "heart";
                 heart.style.left = Math.random() * 100 + "vw";
-                heart.style.animationDuration = (Math.random() * 6 + 6) + "s";
+                heart.style.animationDuration = (Math.random() * 6 + 8) + "s";
                 document.body.appendChild(heart);
-                setTimeout(() => { heart.remove(); }, 8000);
+                setTimeout(() => { heart.remove(); }, 10000);
             }
         }
     </script>
